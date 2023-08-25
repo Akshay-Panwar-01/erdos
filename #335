@@ -1,0 +1,35 @@
+def has_only_odd_digits(num):
+    digits = [int(digit) for digit in str(num)]
+    return all(digit % 2 == 1 for digit in digits)
+
+def find_numbers_with_congruence(congruence_value, modulus,minimum,maximum):
+    x = congruence_value
+    condition=True
+    while condition:
+        if has_only_odd_digits(x) and x % modulus == congruence_value and x>minimum:
+            yield x
+        x += modulus
+        if x>maximum:
+            condition=False
+
+congruence_value = 3125
+modulus = 298023223876953125
+
+rem=1
+i=1
+while rem!=0:
+    rem=(10**i)%modulus
+    i+=1
+print(i-1)
+
+print("Numbers with odd digits and congruence relation x ≡ 3125 (mod 298023223876953125):")
+count_nums=0
+for num in find_numbers_with_congruence(congruence_value, modulus,10**(i-2),10**(i-1)):
+    print(num,len(str(num)),10**(len(str(num)))/modulus)
+    count_nums+=1
+    #print(num//modulus)
+
+
+print("your final ans is :",(pow(5,10**9+7-i+1,10**9+7)*count_nums)%(10**9+7))
+
+'''Answer is 117267593'''

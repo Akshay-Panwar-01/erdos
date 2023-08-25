@@ -1,0 +1,23 @@
+def sum_equals_product(num,x):
+    digits = [int(digit) for digit in str(num)]
+    digit_sum = sum(digits)+77-x
+    digit_product = 1
+    for digit in digits:
+        digit_product *= digit
+    return digit_sum == digit_product
+
+''' Above function calculates if the sum and product of the given number is according to the provided conditions '''
+
+def find_numbers_with_property(start, end,x):
+    i=1
+    while True:
+        if sum_equals_product(end -i,x):
+            print(end-i)
+            return 0
+        i+=1
+
+x=8
+start_range = 10**(x-1)
+end_range = 10**x
+print("Numbers where the sum of digits is equal to the product of digits:")
+find_numbers_with_property(start_range, end_range,x)

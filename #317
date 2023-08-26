@@ -1,0 +1,37 @@
+'''upon investigation of the problem we'll get that the answer should be (2*n+1)C(n+1)'''
+
+def binpow(x, y, p):
+    result = 1
+    x = x % p
+
+    while y > 0:
+        if y % 2 == 1:
+            result = (result * x) % p
+        y = y // 2
+        x = (x * x) % p
+
+    return result
+
+def mod_inverse(a, p):
+    return binpow(a, p - 2, p)
+
+def nCr_mod(n, r, p):
+    if r == 0:
+        return 1
+    
+    numer = 1
+    for i in range(n, n - r, -1):
+        numer = (numer * i) % p
+
+    denom = 1
+    for i in range(1, r + 1):
+        denom = (denom * i) % p
+
+    return (numer * mod_inverse(denom, p)) % p
+
+mod = 1234567891
+n=1000005
+result = nCr_mod(2*n-1, n, mod)
+print("The answer to the problem is: " , result)
+
+'''The answer to the problem is: 285728568'''

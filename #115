@@ -1,0 +1,13 @@
+import math as m
+
+''' we'll use here that am>= gm and so P^(1/n)<= 42/n '''
+
+max_p=-1
+comaparision=-1
+for i in range(1,43):
+    value= (m.log10(42)-m.log10(i))*i
+    if comaparision<value:
+        max_p=i
+        comaparision=value
+
+print("The answer is : " ,int(10**comaparision))

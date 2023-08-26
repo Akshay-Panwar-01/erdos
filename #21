@@ -1,0 +1,6 @@
+'''maximize the value of function f(x,y)=y(x-y) given that x^2+y^2=1'''
+
+#we'll find a solution on (x,y)== (0.923879532511286756128183189, 0.3826834323650897717284599840
+# and the value of the function becomes 0.2071067811865475244008443621 there 
+
+'''Hence the answer to the problem becomes 12071068 on rounding off'''

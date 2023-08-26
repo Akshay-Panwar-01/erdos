@@ -1,0 +1,29 @@
+import math
+def phi(n):
+    result=n
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            while (n % i) == 0:
+                n//=i
+            result-=result//i
+    if n>1:
+        result-=result//n
+    return result 
+
+'''
+i=10**8
+value=1
+while value!=10**8:
+    value=phi(i)
+    i+=1
+print(i-1)
+'''
+
+'''such a number is 100064101 now number of digits in 100064101!'''
+
+n = 100064101
+# Using Stirling's approximation to estimate the number of digits
+
+num_digits = int(math.floor(0.5 * math.log10(2 * math.pi * n) + n * math.log10(n / math.e))) + 1
+
+print("Number of digits in", n, "! is:", num_digits)

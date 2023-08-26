@@ -1,0 +1,18 @@
+'''Total count is 9**5 = 59049 so p*59049 would be equal to the total count of such numbers:'''
+
+def product_of_digits(n):
+    res=1
+    while n>0:
+        res*=(n%10)
+        n//=10
+    return res
+
+count=0
+for i in range(10000,100000):
+    product=product_of_digits(i)
+    if product!=0 and product%10==0:
+        count+=1
+
+print("The answer to the problem is:" , count)
+
+'''The answer to the problem is: 24180'''

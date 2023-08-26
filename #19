@@ -1,0 +1,12 @@
+'''Iterate the loop till the required value is found , if value is less than phi(m) else it will be phi(m)'''
+
+res=201413
+ans=201413
+i=1
+while ans!=1:
+    ans*=res
+    ans%=2097152
+    i+=1
+print(i)
+
+'''The answer to the problem is: 524288'''

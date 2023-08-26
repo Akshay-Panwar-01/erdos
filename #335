@@ -28,7 +28,7 @@ for num in find_numbers_with_congruence(congruence_value, modulus,10**(i-2),10**
     print(num,len(str(num)),10**(len(str(num)))/modulus)
     count_nums+=1
     #print(num//modulus)
-
+'''5739713311195373535159375 25 33554432'''
 
 print("your final ans is :",(pow(5,10**9+7-i+1,10**9+7)*count_nums)%(10**9+7))
 

@@ -1,0 +1,7 @@
+''' integral of 1/log(x) is called another function which is li(x) and finally g(10**22)=201467286691248261497  from WolframAlpha'''
+
+'''https://t5k.org/howmany.html using the website we found that prime numbers less than 10**22 are 201467286689315906290'''
+
+print(201467286691248261497-201467286689315906290)
+
+'''finally the answer to the problem is: 1932355207'''

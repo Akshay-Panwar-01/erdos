@@ -1,0 +1,46 @@
+
+def matrix_multiply(A, B):
+    result = [[0] * len(B[0]) for _ in range(len(A))]
+    for i in range(len(A)):
+        for j in range(len(B[0])):
+            for k in range(len(A[0])):
+                result[i][j] += (A[i][k] * B[k][j])
+
+    return result
+
+
+def x(n):
+    base = [[1, 2], [1, 0]]
+    result = [[1, 0], [0, 1]]
+
+    while n > 0:
+        if n % 2 == 1:
+            result = matrix_multiply(result, base)
+        base = matrix_multiply(base, base)
+        n //= 2
+    return result[0][0]+result[0][1]
+
+def y(n):
+    base = [[2, 3], [1, 0]]
+    result = [[1, 0], [0, 1]]
+
+    while n > 0:
+        if n % 2 == 1:
+            result = matrix_multiply(result, base)
+        base = matrix_multiply(base, base)
+        n //= 2
+    return 7*result[0][0]+result[0][1]
+
+a=y(0)
+b=x(0)
+i=0
+while True:
+    if a==b:
+        print(a)
+    elif a>b:
+        b=x(i+1)
+    elif b>a:
+        a=y(i+1)
+    i+=1
+''' after running the code we'll find out that no such numbers exist only 1 is common in both the sequences
+hence the answer becomes 123**2= 15129'''

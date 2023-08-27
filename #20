@@ -1,0 +1,19 @@
+'''We'll first generate all the possible numbers and then check them'''
+
+def generate_all_numbers(length, number='', results=[]):
+    if length == 0:
+        results.append(number)
+        return
+    generate_all_numbers(length - 1, number + '5', results)
+    generate_all_numbers(length - 1, number + '7', results)
+
+results = []
+generate_all_numbers(20, '', results)
+
+count=0
+for number in results:
+    if int(number)%35==0:
+        count+=1
+print(count)
+
+'''The answer to the problem is : 74898'''

@@ -1,0 +1,30 @@
+'''Solution to the problem is n*x= 100!-(n-1)*n//2 which holds only for odds so the answer should be the number of odd divisors of the number '''
+
+import sympy
+s=sympy.factorial(100)
+
+def sievespf(n):
+    spf = [i for i in range(n + 1)]
+    p = 2
+    while p * p <= n:
+        if spf[p] == p:
+            for i in range(p * p, n + 1, p):
+                if spf[i] == i:
+                    spf[i] = p
+        p += 1 
+    return list(set(spf))
+
+mod=1000000009
+'''Taking all the prime numbers from 3 to 100'''
+primes=sievespf(100)[3::]
+factors=1
+for i in primes:
+    power=0
+    while s%i==0:
+        s//=i
+        power+=1
+    factors*=(power+1)
+'''Calculating the number of odd divisors and printing them '''
+print(factors%mod-1)
+
+'''Answer to the problem is : 943938260'''

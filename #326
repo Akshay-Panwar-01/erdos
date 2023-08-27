@@ -16,8 +16,10 @@ def find_numbers_with_property(start, end,x):
             return 0
         i+=1
 
-x=8
+x=4
 start_range = 10**(x-1)
 end_range = 10**x
 print("Numbers where the sum of digits is equal to the product of digits:")
 find_numbers_with_property(start_range, end_range,x)
+
+'''Number comes out to be : 95211111111111111111111111111111111111111111111111111111111111111111111111111'''

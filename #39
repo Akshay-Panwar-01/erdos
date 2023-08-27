@@ -1,0 +1,6 @@
+'''XOR of all the numbers upto 2**n -1 for any value of n gives a zero 
+so XOR upto 2**n becomes 2**n itself '''
+
+print(pow(2,2013,10**9+7))
+
+'''The answer to the problem is : 598040113'''

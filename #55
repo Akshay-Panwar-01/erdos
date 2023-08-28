@@ -1,0 +1,19 @@
+'''It must end with 4 zeroes in oreder to be a perfect square and devil number as well so we'll proceed considering that'''
+
+def oftype(n):
+    s=str(n)
+    p=list(set([s[0],s[2],s[4],s[10],s[12],s[14]]))
+    q=list(set([s[6],s[8]]))
+    if len(p)==len(q) and len(p)==1 and p[0]=="6" and q[0]=="0":
+        return True 
+    return False
+
+trying=False
+value=24*(10**6)
+final_value=27*(10**6)
+while not trying and value<final_value:
+    trying=oftype(value**2)
+    value+=1
+print(value-1)
+
+'''It'll give 25035216 so the answer to the problem must be: 2503521600'''

@@ -1,0 +1,17 @@
+import sympy
+
+def compare_conditions(old,new):
+    if (old//1000)==(new%1000) and (new//1000)==(old%1000):
+        return True
+    return False
+
+i=100000
+while i<999999:
+    if compare_conditions(i,6*i):
+        print(i)
+    i+=1
+'''The only number it yeilds is : 142857 sum of whose digits is 27'''
+
+print("The answer to the problem is :",sympy.factorial(27)%1000000007)
+
+'''The answer to the problem is : 394134213'''

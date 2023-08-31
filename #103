@@ -1,0 +1,24 @@
+'''We'll first generate all the possible numbers and then check them'''
+
+def generate_all_numbers(length, number='', results=[]):
+    if length == 0:
+        results.append(number)
+        return
+    generate_all_numbers(length - 1, number + '3', results)
+    generate_all_numbers(length - 1, number + '7', results)
+
+results = []
+generate_all_numbers(7, '', results)
+
+def check_condition(a):
+    if a%10==3 and a%7==0:
+        return True
+    return False
+
+count=0
+for number in results:
+    if check_condition(int(number)):
+        count+=int(number)
+print(count)
+
+'''The answer to the problem is : 52177797'''

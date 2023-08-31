@@ -1,0 +1,9 @@
+'''we know that summation of phi(d) for all the divisors d of any number n is equal to n itself 
+thus we are required to calculate the sum over x from 1 to n'''
+
+def F(x):
+    return (x*(x+1))//2
+
+print(F(999999)+F(888888))
+
+'''The answer to the problem is : 895060882716'''

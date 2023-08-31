@@ -1,0 +1,20 @@
+import sympy
+import math as m
+
+def f(x,y):
+    ans=1
+    while y>=x:
+        ans=m.sqrt(ans*y)
+        y-=1
+    return ans
+
+def g(x):
+    return int(x)+1
+
+print(g(f(g(f(42,11111)),22222)))
+
+'''The answer is keep coming 44 for all the values of y's 111 222 ,1111 2222, 11111 22222 so'''
+
+print("The answer to the problem is :",pow(2,44,1000000007))
+
+'''The answer to the problem is : 185921272'''

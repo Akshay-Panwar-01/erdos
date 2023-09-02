@@ -1,0 +1,22 @@
+import math as m
+
+def phi(n):
+    res=n
+    for i in range(2,int(m.sqrt(n))+1):
+        if n%i==0:
+            while (n % i) == 0:
+                n//=i
+            res-=(res//i)
+    if n>1:
+        res-=(res//n)
+    return res
+
+i=1
+while True:
+    if phi(i)==phi(i+1) and phi(i)==phi(i+2):
+        break
+    i+=1
+
+print(i%1729)
+
+''' Answer : 1728'''

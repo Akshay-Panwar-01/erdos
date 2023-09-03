@@ -16,9 +16,6 @@ int main() {
 
     for (long long int i = a; i <= 10 * a; ++i) {
         ans+=count(i);
-        if (i%a==0){
-            cout<<i<<endl;
-        }
     }
     cout <<"answer is :"<< ans << endl;
 

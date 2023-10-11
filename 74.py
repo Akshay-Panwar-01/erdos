@@ -1,4 +1,5 @@
-'''Largest positive integer n for which n! can be expressed as the product of n-a consecutive positive integers is (a+1)! - 1'''
+'''Largest positive integer n for which n! can be expressed as the product of n-a consecutive positive integers is (a+1)! - 1
+https://artofproblemsolving.com/wiki/index.php/1990_AIME_Problems/Problem_11 '''
 import sympy 
 import math 
 
